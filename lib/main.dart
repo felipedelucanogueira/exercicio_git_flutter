@@ -26,7 +26,21 @@ class MyApp extends StatelessWidget {
           Container(
             color: Colors.blue,
             width: MediaQuery.of(context).size.width * 1,
-            height: MediaQuery.of(context).size.height * 0.15,
+            height: MediaQuery.of(context).size.height * 0.19,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                ColorfulContainer(
+                  cor: Colors.green,
+                ),
+                ColorfulContainer(
+                  cor: Colors.yellowAccent,
+                ),
+                ColorfulContainer(
+                  cor: Colors.red,
+                ),
+              ],
+            ),
           )
         ],
       ),
@@ -38,10 +52,25 @@ class CardContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(20),
+      margin: EdgeInsets.only(top: 35),
       color: Colors.white,
-      width: MediaQuery.of(context).size.width * 0.85,
+      width: MediaQuery.of(context).size.width * 0.89,
       height: MediaQuery.of(context).size.height * 0.15,
+    );
+  }
+}
+
+class ColorfulContainer extends StatelessWidget {
+  final Color cor;
+
+  const ColorfulContainer({Key key, this.cor}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: cor,
+      width: MediaQuery.of(context).size.width * 0.12,
+      height: MediaQuery.of(context).size.height * 0.07,
     );
   }
 }
